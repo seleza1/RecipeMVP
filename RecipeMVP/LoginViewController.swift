@@ -9,6 +9,8 @@ import UIKit
 
 final class LoginViewController: UIViewController {
 
+    var presenter: LoginViewPresenterProtocol!
+
     private let loginTextField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = .white
@@ -96,65 +98,69 @@ final class LoginViewController: UIViewController {
     }
 }
 
-    extension LoginViewController {
-        private func setConstraints() {
-            NSLayoutConstraint.activate([
+extension LoginViewController {
+    private func setConstraints() {
+        NSLayoutConstraint.activate([
 
-                loginTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
-                loginTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-                loginTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            loginTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
+            loginTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            loginTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
 
-                passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 18),
-                passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-                passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 18),
+            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
 
-                loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 32),
-                loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-                loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 32),
+            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
 
-                registerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32),
-                registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 64),
-                registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -64),
+            registerButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32),
+            registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 64),
+            registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -64),
 
-                failureLabel.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 1),
-                failureLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-                failureLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-                failureLabel.bottomAnchor.constraint(equalTo: passwordTextField.topAnchor, constant: 1),
+            failureLabel.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 1),
+            failureLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            failureLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            failureLabel.bottomAnchor.constraint(equalTo: passwordTextField.topAnchor, constant: 1),
 
-                succesLabel.bottomAnchor.constraint(equalTo: loginTextField.topAnchor, constant: -8),
-                succesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-                succesLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
-            ])
-        }
-
-        private func setupViews() {
-            view.addSubview(loginButton)
-            view.addSubview(registerButton)
-            view.addSubview(loginTextField)
-            view.addSubview(passwordTextField)
-            view.addSubview(failureLabel)
-            view.addSubview(succesLabel)
-        }
-
-        private func setupKeyboard() {
-            // passwordTextField.keyboardType = .asciiCapableNumberPad
-            passwordTextField.isSecureTextEntry = true
-        }
-
-        private func addTarget() {
-            registerButton.addTarget(self, action: #selector(registerUser), for: .touchUpInside)
-            loginButton.addTarget(self, action: #selector(signIn), for: .touchUpInside)
-        }
-
-        private func updateUi() {
-            view.backgroundColor = .white
-            failureLabel.isHidden = true
-            succesLabel.isHidden = true
-        }
+            succesLabel.bottomAnchor.constraint(equalTo: loginTextField.topAnchor, constant: -8),
+            succesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            succesLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+        ])
     }
 
-    extension LoginViewController: UITextFieldDelegate {
-        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            view.endEditing(true)
-        }
+    private func setupViews() {
+        view.addSubview(loginButton)
+        view.addSubview(registerButton)
+        view.addSubview(loginTextField)
+        view.addSubview(passwordTextField)
+        view.addSubview(failureLabel)
+        view.addSubview(succesLabel)
     }
+
+    private func setupKeyboard() {
+        // passwordTextField.keyboardType = .asciiCapableNumberPad
+        passwordTextField.isSecureTextEntry = true
+    }
+
+    private func addTarget() {
+        registerButton.addTarget(self, action: #selector(registerUser), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(signIn), for: .touchUpInside)
+    }
+
+    private func updateUi() {
+        view.backgroundColor = .white
+        failureLabel.isHidden = true
+        succesLabel.isHidden = true
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+}
+
+extension LoginViewController: LoginViewProtocol {
+    
+}
