@@ -15,9 +15,11 @@
 		CEA7551329B9CD3400E3CFE3 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7551229B9CD3400E3CFE3 /* Router.swift */; };
 		CEA7551729B9CD7800E3CFE3 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7551629B9CD7800E3CFE3 /* LoginPresenter.swift */; };
 		CEA7551F29B9CE2600E3CFE3 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7551E29B9CE2600E3CFE3 /* MainPresenter.swift */; };
-		CEA7552129B9CE3200E3CFE3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7552029B9CE3200E3CFE3 /* MainViewController.swift */; };
+		CEA7552129B9CE3200E3CFE3 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7552029B9CE3200E3CFE3 /* RecipeViewController.swift */; };
 		CEA7552829B9CEA500E3CFE3 /* recipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7552729B9CEA500E3CFE3 /* recipeModel.swift */; };
-		CEA7552E29B9DDDF00E3CFE3 /* MainModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7552D29B9DDDF00E3CFE3 /* MainModuleBuilder.swift */; };
+		CEA7552E29B9DDDF00E3CFE3 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7552D29B9DDDF00E3CFE3 /* ModuleBuilder.swift */; };
+		CEA7553329BA0D4700E3CFE3 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7553229BA0D4700E3CFE3 /* FavoriteViewController.swift */; };
+		CEA7553629BA0D5A00E3CFE3 /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7553529BA0D5A00E3CFE3 /* FavoritePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +33,11 @@
 		CEA7551229B9CD3400E3CFE3 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CEA7551629B9CD7800E3CFE3 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		CEA7551E29B9CE2600E3CFE3 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		CEA7552029B9CE3200E3CFE3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CEA7552029B9CE3200E3CFE3 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		CEA7552729B9CEA500E3CFE3 /* recipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipeModel.swift; sourceTree = "<group>"; };
-		CEA7552D29B9DDDF00E3CFE3 /* MainModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleBuilder.swift; sourceTree = "<group>"; };
+		CEA7552D29B9DDDF00E3CFE3 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		CEA7553229BA0D4700E3CFE3 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		CEA7553529BA0D5A00E3CFE3 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		CE86716A29B9BE9F00F7FDAB /* RecipeMVP */ = {
 			isa = PBXGroup;
 			children = (
+				CEA7553129BA0D3000E3CFE3 /* FavoriteModule */,
 				CEA7551029B9CCC600E3CFE3 /* Applications */,
 				CEA7551C29B9CDAC00E3CFE3 /* Assembly */,
 				CEA7551D29B9CDD700E3CFE3 /* MainModule */,
@@ -131,7 +136,7 @@
 		CEA7551C29B9CDAC00E3CFE3 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
-				CEA7552D29B9DDDF00E3CFE3 /* MainModuleBuilder.swift */,
+				CEA7552D29B9DDDF00E3CFE3 /* ModuleBuilder.swift */,
 			);
 			name = Assembly;
 			sourceTree = "<group>";
@@ -149,7 +154,7 @@
 		CEA7552529B9CE8F00E3CFE3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CEA7552029B9CE3200E3CFE3 /* MainViewController.swift */,
+				CEA7552029B9CE3200E3CFE3 /* RecipeViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -168,6 +173,31 @@
 				CEA7552729B9CEA500E3CFE3 /* recipeModel.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		CEA7553129BA0D3000E3CFE3 /* FavoriteModule */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7553429BA0D5000E3CFE3 /* View */,
+				CEA7553729BA0D5E00E3CFE3 /* Presenter */,
+			);
+			name = FavoriteModule;
+			sourceTree = "<group>";
+		};
+		CEA7553429BA0D5000E3CFE3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7553229BA0D4700E3CFE3 /* FavoriteViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CEA7553729BA0D5E00E3CFE3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7553529BA0D5A00E3CFE3 /* FavoritePresenter.swift */,
+			);
+			name = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,14 +271,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA7551329B9CD3400E3CFE3 /* Router.swift in Sources */,
+				CEA7553629BA0D5A00E3CFE3 /* FavoritePresenter.swift in Sources */,
 				CE86717029B9BE9F00F7FDAB /* LoginViewController.swift in Sources */,
 				CE86716C29B9BE9F00F7FDAB /* AppDelegate.swift in Sources */,
 				CE86716E29B9BE9F00F7FDAB /* SceneDelegate.swift in Sources */,
+				CEA7553329BA0D4700E3CFE3 /* FavoriteViewController.swift in Sources */,
 				CEA7551F29B9CE2600E3CFE3 /* MainPresenter.swift in Sources */,
 				CEA7551729B9CD7800E3CFE3 /* LoginPresenter.swift in Sources */,
 				CEA7552829B9CEA500E3CFE3 /* recipeModel.swift in Sources */,
-				CEA7552E29B9DDDF00E3CFE3 /* MainModuleBuilder.swift in Sources */,
-				CEA7552129B9CE3200E3CFE3 /* MainViewController.swift in Sources */,
+				CEA7552E29B9DDDF00E3CFE3 /* ModuleBuilder.swift in Sources */,
+				CEA7552129B9CE3200E3CFE3 /* RecipeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@ import UIKit
 protocol RouterMain {
     var navigationController: UINavigationController? { get set }
     var assemblyBuilder: AssemblyBuilderProtocol? { get set }
-
+    
     func pushToMainViewcontroller()
 }
 
@@ -30,8 +30,10 @@ class Router: RouterProtocol {
 
     func initialViewController() {
         if let navigationController = navigationController {
-            guard let loginViewController = assemblyBuilder?.createLoginModule(router: self) else { return }
-            navigationController.viewControllers = [loginViewController]
+            guard let recipeViewController = assemblyBuilder?.createMainModule(router: self) else { return }
+            guard let tabBarController = assemblyBuilder?.createTabBarModule(navigationController: navigationController, navBarArray: [recipeViewController]) else { return }
+            navigationController.viewControllers = [tabBarController]
+            navigationController.setNavigationBarHidden(true, animated: true)
         }
     }
 
