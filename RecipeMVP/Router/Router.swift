@@ -9,8 +9,9 @@ import UIKit
 
 protocol RouterMain {
     var navigationController: UINavigationController? { get set }
-    var assemblyBuilder: AssemblyBuilderLoginProtocol? { get set }
-    func pushToLogin()
+    var assemblyBuilder: AssemblyBuilderProtocol? { get set }
+
+    func pushToMainViewcontroller()
 }
 
 protocol RouterProtocol: RouterMain {
@@ -18,22 +19,28 @@ protocol RouterProtocol: RouterMain {
 }
 
 class Router: RouterProtocol {
-    var assemblyBuilder: AssemblyBuilderLoginProtocol?
+    var assemblyBuilder: AssemblyBuilderProtocol?
+
     var navigationController: UINavigationController?
 
-    init(navigationController: UINavigationController? = nil, assemblyBuilder: AssemblyBuilderLoginProtocol? = nil) {
+    init(navigationController: UINavigationController? = nil, assemblyBuilder: AssemblyBuilderProtocol? = nil) {
         self.navigationController = navigationController
         self.assemblyBuilder = assemblyBuilder
     }
 
     func initialViewController() {
         if let navigationController = navigationController {
-            guard let mainViewController = assemblyBuilder?.createLoginModule(router: self) else { return }
-            navigationController.viewControllers = [mainViewController]
+            guard let loginViewController = assemblyBuilder?.createLoginModule(router: self) else { return }
+            navigationController.viewControllers = [loginViewController]
         }
     }
-    func pushToLogin() {
-        print("push")
+
+    func pushToMainViewcontroller() {
+        if let navigationController = navigationController {
+            guard let mainViewController = assemblyBuilder?.createMainModule(router: self) else { return }
+
+            navigationController.pushViewController(mainViewController, animated: true)
+        }
     }
 
 }

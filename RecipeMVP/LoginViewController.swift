@@ -39,7 +39,6 @@ final class LoginViewController: UIViewController {
         button.setTitleColor(.black, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
 
-
         return button
     }()
 
@@ -93,8 +92,8 @@ final class LoginViewController: UIViewController {
 
     }
 
-    @objc func signIn() {
-
+    @objc func loginButtonPressed() {
+        presenter.pushToMainViewController()
     }
 }
 
@@ -145,7 +144,7 @@ extension LoginViewController {
 
     private func addTarget() {
         registerButton.addTarget(self, action: #selector(registerUser), for: .touchUpInside)
-        loginButton.addTarget(self, action: #selector(signIn), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
     }
 
     private func updateUi() {

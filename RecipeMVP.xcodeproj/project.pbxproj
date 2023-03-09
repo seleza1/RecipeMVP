@@ -14,11 +14,10 @@
 		CE86717829B9BEA100F7FDAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE86717629B9BEA100F7FDAB /* LaunchScreen.storyboard */; };
 		CEA7551329B9CD3400E3CFE3 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7551229B9CD3400E3CFE3 /* Router.swift */; };
 		CEA7551729B9CD7800E3CFE3 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7551629B9CD7800E3CFE3 /* LoginPresenter.swift */; };
-		CEA7551B29B9CDA800E3CFE3 /* LoginModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7551A29B9CDA800E3CFE3 /* LoginModuleBuilder.swift */; };
 		CEA7551F29B9CE2600E3CFE3 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7551E29B9CE2600E3CFE3 /* MainPresenter.swift */; };
 		CEA7552129B9CE3200E3CFE3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7552029B9CE3200E3CFE3 /* MainViewController.swift */; };
-		CEA7552329B9CE8100E3CFE3 /* MainModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7552229B9CE8100E3CFE3 /* MainModuleBuilder.swift */; };
 		CEA7552829B9CEA500E3CFE3 /* recipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7552729B9CEA500E3CFE3 /* recipeModel.swift */; };
+		CEA7552E29B9DDDF00E3CFE3 /* MainModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7552D29B9DDDF00E3CFE3 /* MainModuleBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,11 +30,10 @@
 		CE86717929B9BEA100F7FDAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEA7551229B9CD3400E3CFE3 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CEA7551629B9CD7800E3CFE3 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
-		CEA7551A29B9CDA800E3CFE3 /* LoginModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleBuilder.swift; sourceTree = "<group>"; };
 		CEA7551E29B9CE2600E3CFE3 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		CEA7552029B9CE3200E3CFE3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		CEA7552229B9CE8100E3CFE3 /* MainModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleBuilder.swift; sourceTree = "<group>"; };
 		CEA7552729B9CEA500E3CFE3 /* recipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipeModel.swift; sourceTree = "<group>"; };
+		CEA7552D29B9DDDF00E3CFE3 /* MainModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +66,10 @@
 		CE86716A29B9BE9F00F7FDAB /* RecipeMVP */ = {
 			isa = PBXGroup;
 			children = (
+				CEA7551029B9CCC600E3CFE3 /* Applications */,
+				CEA7551C29B9CDAC00E3CFE3 /* Assembly */,
 				CEA7551D29B9CDD700E3CFE3 /* MainModule */,
 				CEA7551529B9CD3E00E3CFE3 /* LoginModule */,
-				CEA7551029B9CCC600E3CFE3 /* Applications */,
 				CEA7551129B9CD0B00E3CFE3 /* Resources */,
 				CEA7551429B9CD3800E3CFE3 /* Router */,
 			);
@@ -109,7 +108,6 @@
 			children = (
 				CEA7551929B9CD8500E3CFE3 /* View */,
 				CEA7551829B9CD7E00E3CFE3 /* Presenter */,
-				CEA7551C29B9CDAC00E3CFE3 /* Assembly */,
 			);
 			name = LoginModule;
 			sourceTree = "<group>";
@@ -133,7 +131,7 @@
 		CEA7551C29B9CDAC00E3CFE3 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
-				CEA7551A29B9CDA800E3CFE3 /* LoginModuleBuilder.swift */,
+				CEA7552D29B9DDDF00E3CFE3 /* MainModuleBuilder.swift */,
 			);
 			name = Assembly;
 			sourceTree = "<group>";
@@ -144,17 +142,8 @@
 				CEA7552929B9CEA900E3CFE3 /* Model */,
 				CEA7552529B9CE8F00E3CFE3 /* View */,
 				CEA7552629B9CE9700E3CFE3 /* Presenter */,
-				CEA7552429B9CE8400E3CFE3 /* Assembly */,
 			);
 			name = MainModule;
-			sourceTree = "<group>";
-		};
-		CEA7552429B9CE8400E3CFE3 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				CEA7552229B9CE8100E3CFE3 /* MainModuleBuilder.swift */,
-			);
-			name = Assembly;
 			sourceTree = "<group>";
 		};
 		CEA7552529B9CE8F00E3CFE3 /* View */ = {
@@ -252,14 +241,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA7551329B9CD3400E3CFE3 /* Router.swift in Sources */,
-				CEA7551B29B9CDA800E3CFE3 /* LoginModuleBuilder.swift in Sources */,
 				CE86717029B9BE9F00F7FDAB /* LoginViewController.swift in Sources */,
 				CE86716C29B9BE9F00F7FDAB /* AppDelegate.swift in Sources */,
 				CE86716E29B9BE9F00F7FDAB /* SceneDelegate.swift in Sources */,
 				CEA7551F29B9CE2600E3CFE3 /* MainPresenter.swift in Sources */,
 				CEA7551729B9CD7800E3CFE3 /* LoginPresenter.swift in Sources */,
 				CEA7552829B9CEA500E3CFE3 /* recipeModel.swift in Sources */,
-				CEA7552329B9CE8100E3CFE3 /* MainModuleBuilder.swift in Sources */,
+				CEA7552E29B9DDDF00E3CFE3 /* MainModuleBuilder.swift in Sources */,
 				CEA7552129B9CE3200E3CFE3 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,12 +7,21 @@
 
 import UIKit
 
-protocol AssemblyBuilderMainProtocol {
+protocol AssemblyBuilderProtocol {
+    func createLoginModule(router: RouterProtocol) -> UIViewController
     func createMainModule(router: RouterProtocol) -> UIViewController
 }
 
+class ModelBuilder: AssemblyBuilderProtocol {
 
-class MainBuilder: AssemblyBuilderMainProtocol {
+    func createLoginModule(router: RouterProtocol) -> UIViewController {
+        let view = LoginViewController()
+        let presenter = LoginPresenter(view: view, router: router)
+        view.presenter = presenter
+
+        return view
+    }
+
     func createMainModule(router: RouterProtocol) -> UIViewController {
         let view = MainViewController()
         let presenter = MainPresenter(view: view, router: router)
@@ -20,6 +29,4 @@ class MainBuilder: AssemblyBuilderMainProtocol {
 
         return view
     }
-
-
 }

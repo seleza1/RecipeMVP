@@ -24,6 +24,4 @@ class MainPresenter: MainViewPresenterProtocol {
         self.view = view
         self.router = router
     }
-
-
 }
