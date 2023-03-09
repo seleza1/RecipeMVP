@@ -8,10 +8,12 @@
 import UIKit
 
 class FavoriteViewController: UIViewController {
+    
     var presenter: FavoritePresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
 
     }
 

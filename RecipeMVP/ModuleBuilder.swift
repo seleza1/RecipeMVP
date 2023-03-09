@@ -43,14 +43,13 @@ final class ModelBuilder: AssemblyBuilderProtocol {
     func createTabBarModule(navigationController: UIViewController, navBarArray: [UIViewController]) -> UITabBarController {
         let tabBarViewController = UITabBarController()
         let listOfRecipesViewController = createNavController(viewController: RecipeViewController(), itemName: "Search recipes", itemImage: "list.bullet")
-        let favoriteRecipe = createNavController(viewController: FavoriteViewController(), itemName: "star", itemImage: "Favorite")
+        let favoriteRecipe = createNavController(viewController: FavoriteViewController(), itemName: "star", itemImage: "brain")
 
         tabBarViewController.viewControllers = [listOfRecipesViewController, favoriteRecipe]
 
         return tabBarViewController
     }
 }
-
 
 func createNavController(viewController: UIViewController, itemName: String, itemImage: String) -> UINavigationController {
     let item = UITabBarItem(title: itemName, image: UIImage(systemName: itemImage), tag: 0)
@@ -60,3 +59,4 @@ func createNavController(viewController: UIViewController, itemName: String, ite
 
     return navigationController
 }
+
