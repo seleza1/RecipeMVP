@@ -9,10 +9,16 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    var presenter: MainViewPresenterProtocol!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
 
+}
+
+extension MainViewController: MainViewProtocol {
+    
 }
