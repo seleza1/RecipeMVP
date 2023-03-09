@@ -13,8 +13,6 @@ class RecipeViewController: UIViewController {
 
     private let identifier = "cell"
 
-    var image: UIImage!
-
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -26,6 +24,8 @@ class RecipeViewController: UIViewController {
         let activity = UIActivityIndicatorView()
         activity.hidesWhenStopped = true
         activity.style = .large
+        activity.translatesAutoresizingMaskIntoConstraints = false
+
         return activity
 
     }()
@@ -33,6 +33,8 @@ class RecipeViewController: UIViewController {
     private let uiView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+
 
         return view
     }()
@@ -42,6 +44,8 @@ class RecipeViewController: UIViewController {
         label.text = "Connection failed"
         label.font = label.font.withSize(20)
         label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+
         return label
     }()
 
@@ -51,8 +55,9 @@ class RecipeViewController: UIViewController {
         label.font = label.font.withSize(14)
         label.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         label.numberOfLines = 0
-
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
+
         return label
     }()
 
@@ -61,6 +66,8 @@ class RecipeViewController: UIViewController {
         button.setTitle("Retry", for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.01562912948, green: 0.5854102373, blue: 0.9989331365, alpha: 1)
         button.layer.cornerRadius = 15
+        button.translatesAutoresizingMaskIntoConstraints = false
+
         return button
     }()
 
@@ -80,11 +87,13 @@ class RecipeViewController: UIViewController {
 
 extension RecipeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        // presenter.recipes?.count ?? 0
+        return 5
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        // cell.textLabel?.text = presenter.recipes?[indexPath.row].title
 
         return cell
     }
@@ -147,5 +156,16 @@ extension RecipeViewController {
 }
 
 extension RecipeViewController: MainViewProtocol {
+    func succes() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+
+        }
+    }
+
+    func failure(error: Error) {
+        print(error)
+    }
+
 
 }

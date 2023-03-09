@@ -11,22 +11,23 @@ protocol AssemblyBuilderProtocol {
     func createLoginModule(router: RouterProtocol) -> UIViewController
     func createMainModule(router: RouterProtocol) -> UIViewController
     func createFavoriteModule(router: RouterProtocol) -> UIViewController
+    
     func createTabBarModule(navigationController: UIViewController, navBarArray: [UIViewController]) -> UITabBarController
 }
 
 final class ModelBuilder: AssemblyBuilderProtocol {
-
-    func createLoginModule(router: RouterProtocol) -> UIViewController {
-        let view = LoginViewController()
-        let presenter = LoginPresenter(view: view, router: router)
+    func createMainModule(router: RouterProtocol) -> UIViewController {
+        let view = RecipeViewController()
+        let networkService = NetworkService()
+        let presenter = MainPresenter(view: view, networkService: networkService, router: router)
         view.presenter = presenter
 
         return view
     }
 
-    func createMainModule(router: RouterProtocol) -> UIViewController {
-        let view = RecipeViewController()
-        let presenter = MainPresenter(view: view, router: router)
+    func createLoginModule(router: RouterProtocol) -> UIViewController {
+        let view = LoginViewController()
+        let presenter = LoginPresenter(view: view, router: router)
         view.presenter = presenter
 
         return view
@@ -43,9 +44,9 @@ final class ModelBuilder: AssemblyBuilderProtocol {
     func createTabBarModule(navigationController: UIViewController, navBarArray: [UIViewController]) -> UITabBarController {
         let tabBarViewController = UITabBarController()
         let listOfRecipesViewController = createNavController(viewController: RecipeViewController(), itemName: "Search recipes", itemImage: "list.bullet")
-        let favoriteRecipe = createNavController(viewController: FavoriteViewController(), itemName: "star", itemImage: "brain")
+        let favoriteRecipesViewController = createNavController(viewController: FavoriteViewController(), itemName: "Search recipes", itemImage: "list.bullet")
 
-        tabBarViewController.viewControllers = [listOfRecipesViewController, favoriteRecipe]
+        tabBarViewController.viewControllers = [listOfRecipesViewController, favoriteRecipesViewController]
 
         return tabBarViewController
     }
@@ -59,4 +60,6 @@ func createNavController(viewController: UIViewController, itemName: String, ite
 
     return navigationController
 }
+
+
 

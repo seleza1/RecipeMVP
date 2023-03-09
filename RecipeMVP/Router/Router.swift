@@ -19,6 +19,7 @@ protocol RouterProtocol: RouterMain {
 }
 
 class Router: RouterProtocol {
+
     var assemblyBuilder: AssemblyBuilderProtocol?
 
     var navigationController: UINavigationController?
@@ -35,6 +36,12 @@ class Router: RouterProtocol {
             navigationController.viewControllers = [tabBarController]
             navigationController.setNavigationBarHidden(true, animated: true)
         }
+
+//    func initialViewController() {
+//        if let navigationController = navigationController {
+//            guard let mainViewController = assemblyBuilder?.createMainModule(router: self) else { return }
+//            navigationController.viewControllers = [mainViewController]
+//        }
     }
 
     func pushToMainViewcontroller() {

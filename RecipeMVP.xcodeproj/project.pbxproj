@@ -21,6 +21,7 @@
 		CEA7553329BA0D4700E3CFE3 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7553229BA0D4700E3CFE3 /* FavoriteViewController.swift */; };
 		CEA7553629BA0D5A00E3CFE3 /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7553529BA0D5A00E3CFE3 /* FavoritePresenter.swift */; };
 		CEA7553D29BA102700E3CFE3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7553C29BA102700E3CFE3 /* NetworkService.swift */; };
+		CEA7554029BA19FB00E3CFE3 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7553F29BA19FB00E3CFE3 /* Link.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		CEA7553229BA0D4700E3CFE3 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		CEA7553529BA0D5A00E3CFE3 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 		CEA7553C29BA102700E3CFE3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		CEA7553F29BA19FB00E3CFE3 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA7553C29BA102700E3CFE3 /* NetworkService.swift */,
+				CEA7553F29BA19FB00E3CFE3 /* Link.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				CE86717029B9BE9F00F7FDAB /* LoginViewController.swift in Sources */,
 				CE86716C29B9BE9F00F7FDAB /* AppDelegate.swift in Sources */,
 				CE86716E29B9BE9F00F7FDAB /* SceneDelegate.swift in Sources */,
+				CEA7554029BA19FB00E3CFE3 /* Link.swift in Sources */,
 				CEA7553329BA0D4700E3CFE3 /* FavoriteViewController.swift in Sources */,
 				CEA7551F29B9CE2600E3CFE3 /* MainPresenter.swift in Sources */,
 				CEA7551729B9CD7800E3CFE3 /* LoginPresenter.swift in Sources */,
