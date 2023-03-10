@@ -26,7 +26,7 @@ class LoginPresenter: LoginViewPresenterProtocol {
     }
 
     func pushToMainViewController() {
-        router.pushToMainViewcontroller()
+        // router.pushToMainViewcontroller()
     }
 }
 

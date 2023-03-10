@@ -88,12 +88,13 @@ class RecipeViewController: UIViewController {
 extension RecipeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // presenter.recipes?.count ?? 0
+
         return 5
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-        // cell.textLabel?.text = presenter.recipes?[indexPath.row].title
+//         cell.textLabel?.text = presenter.recipes?[indexPath.row].title
 
         return cell
     }
@@ -141,7 +142,7 @@ extension RecipeViewController {
     private func updateUi() {
         view.backgroundColor = .white
         title = "List of recipes"
-        activityIndicator.startAnimating()
+        activityIndicator.stopAnimating()
         uiView.isHidden = true
     }
 
@@ -159,13 +160,10 @@ extension RecipeViewController: MainViewProtocol {
     func succes() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
-
         }
     }
 
     func failure(error: Error) {
         print(error)
     }
-
-
 }

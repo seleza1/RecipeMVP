@@ -11,7 +11,7 @@ protocol RouterMain {
     var navigationController: UINavigationController? { get set }
     var assemblyBuilder: AssemblyBuilderProtocol? { get set }
     
-    func pushToMainViewcontroller()
+    // func pushToMainViewcontroller()
 }
 
 protocol RouterProtocol: RouterMain {
@@ -21,7 +21,6 @@ protocol RouterProtocol: RouterMain {
 class Router: RouterProtocol {
 
     var assemblyBuilder: AssemblyBuilderProtocol?
-
     var navigationController: UINavigationController?
 
     init(navigationController: UINavigationController? = nil, assemblyBuilder: AssemblyBuilderProtocol? = nil) {
@@ -31,25 +30,20 @@ class Router: RouterProtocol {
 
     func initialViewController() {
         if let navigationController = navigationController {
-            guard let recipeViewController = assemblyBuilder?.createMainModule(router: self) else { return }
-            guard let tabBarController = assemblyBuilder?.createTabBarModule(navigationController: navigationController, navBarArray: [recipeViewController]) else { return }
+            guard let mainViewController = assemblyBuilder?.createMainModule(router: self) else { return }
+            guard let tabBarController = assemblyBuilder?.createTaBarAndNavBar(rootViewcontroller: navigationController, navBarArray: mainViewController) else { return }
             navigationController.viewControllers = [tabBarController]
-            navigationController.setNavigationBarHidden(true, animated: true)
         }
+    }
 
-//    func initialViewController() {
+//    func pushToMainViewcontroller() {
 //        if let navigationController = navigationController {
 //            guard let mainViewController = assemblyBuilder?.createMainModule(router: self) else { return }
-//            navigationController.viewControllers = [mainViewController]
+//
+//            navigationController.pushViewController(mainViewController, animated: true)
 //        }
-    }
-
-    func pushToMainViewcontroller() {
-        if let navigationController = navigationController {
-            guard let mainViewController = assemblyBuilder?.createMainModule(router: self) else { return }
-
-            navigationController.pushViewController(mainViewController, animated: true)
-        }
-    }
+//    }
 
 }
+
+

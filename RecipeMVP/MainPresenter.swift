@@ -5,8 +5,6 @@
 //  Created by user on 09.03.2023.
 //
 
-import Foundation
-
 protocol MainViewProtocol: AnyObject {
     func succes()
     func failure(error: Error)
@@ -35,7 +33,7 @@ class MainPresenter: MainViewPresenterProtocol {
     }
 
     func getNews() {
-        networkService.getRandomRecipes(url: "https://api.spoonacular.com/recipes/random?apiKey=f5fdaf7f620a46fbb4e95d21e78def61&number=50&tags=dessert") { [weak self] result in
+        networkService.getRandomRecipes(url: Link.url) { [weak self] result in
             switch result {
             case .success(let news):
                 self?.recipes = news
