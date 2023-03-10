@@ -13,8 +13,8 @@ protocol MainViewProtocol: AnyObject {
 protocol MainViewPresenterProtocol: AnyObject {
     init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
 
-    var recipes: [Recipe]? { get set }
-    func getNews()
+    var recipes: [Recipe] { get set }
+    func getRecipes()
 
 }
 
@@ -23,16 +23,16 @@ class MainPresenter: MainViewPresenterProtocol {
     unowned var view: MainViewProtocol?
     let networkService: NetworkServiceProtocol!
     var router: RouterProtocol?
-    var recipes: [Recipe]?
+    var recipes: [Recipe] = []
 
     required init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol) {
         self.networkService = networkService
         self.view = view
         self.router = router
-        getNews()
+        getRecipes()
     }
 
-    func getNews() {
+    func getRecipes() {
         networkService.getRandomRecipes(url: Link.url) { [weak self] result in
             switch result {
             case .success(let news):

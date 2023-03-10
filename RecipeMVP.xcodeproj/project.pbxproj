@@ -22,7 +22,6 @@
 		CEA7553629BA0D5A00E3CFE3 /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7553529BA0D5A00E3CFE3 /* FavoritePresenter.swift */; };
 		CEA7553D29BA102700E3CFE3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7553C29BA102700E3CFE3 /* NetworkService.swift */; };
 		CEA7554029BA19FB00E3CFE3 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7553F29BA19FB00E3CFE3 /* Link.swift */; };
-		CEA7554429BA605600E3CFE3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7554329BA605600E3CFE3 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +42,6 @@
 		CEA7553529BA0D5A00E3CFE3 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 		CEA7553C29BA102700E3CFE3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CEA7553F29BA19FB00E3CFE3 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
-		CEA7554329BA605600E3CFE3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +82,6 @@
 				CEA7553B29BA101700E3CFE3 /* ServiceLayer */,
 				CEA7551529B9CD3E00E3CFE3 /* LoginModule */,
 				CEA7551129B9CD0B00E3CFE3 /* Resources */,
-				CEA7554329BA605600E3CFE3 /* TabBarController.swift */,
 			);
 			path = RecipeMVP;
 			sourceTree = "<group>";
@@ -306,7 +303,6 @@
 				CEA7551729B9CD7800E3CFE3 /* LoginPresenter.swift in Sources */,
 				CEA7552829B9CEA500E3CFE3 /* recipeModel.swift in Sources */,
 				CEA7552E29B9DDDF00E3CFE3 /* AssemblyBuilder.swift in Sources */,
-				CEA7554429BA605600E3CFE3 /* TabBarController.swift in Sources */,
 				CEA7553D29BA102700E3CFE3 /* NetworkService.swift in Sources */,
 				CEA7552129B9CE3200E3CFE3 /* RecipeViewController.swift in Sources */,
 			);

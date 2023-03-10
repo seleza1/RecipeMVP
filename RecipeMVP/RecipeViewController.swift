@@ -13,7 +13,7 @@ class RecipeViewController: UIViewController {
 
     private let identifier = "cell"
 
-    private let tableView: UITableView = {
+    let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -71,6 +71,8 @@ class RecipeViewController: UIViewController {
         return button
     }()
 
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         addViews()
@@ -78,7 +80,9 @@ class RecipeViewController: UIViewController {
         setConstraints()
         updateUi()
         retryButton.addTarget(self, action: #selector(getAgain), for: .touchUpInside)
+        
     }
+
 
     @objc func getAgain() {
         uiView.isHidden = true
@@ -87,14 +91,12 @@ class RecipeViewController: UIViewController {
 
 extension RecipeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // presenter.recipes?.count ?? 0
-
-        return 5
+        presenter.recipes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-//         cell.textLabel?.text = presenter.recipes?[indexPath.row].title
+        cell.textLabel?.text = presenter.recipes[indexPath.row].title
 
         return cell
     }
@@ -144,6 +146,7 @@ extension RecipeViewController {
         title = "List of recipes"
         activityIndicator.stopAnimating()
         uiView.isHidden = true
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     private func addViews() {
