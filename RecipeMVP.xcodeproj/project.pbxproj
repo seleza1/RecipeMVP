@@ -233,10 +233,26 @@
 		CEA7554729BC5D2500E3CFE3 /* DetailModule */ = {
 			isa = PBXGroup;
 			children = (
-				CEA7554829BC5D4200E3CFE3 /* DetailViewController.swift */,
-				CEA7554A29BC5D5000E3CFE3 /* DetailPresenter.swift */,
+				CEA7554E29BCBB6500E3CFE3 /* View */,
+				CEA7554F29BCBB6A00E3CFE3 /* Presenter */,
 			);
 			path = DetailModule;
+			sourceTree = "<group>";
+		};
+		CEA7554E29BCBB6500E3CFE3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7554829BC5D4200E3CFE3 /* DetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEA7554F29BCBB6A00E3CFE3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7554A29BC5D5000E3CFE3 /* DetailPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
