@@ -80,12 +80,12 @@
 		CE86716A29B9BE9F00F7FDAB /* RecipeMVP */ = {
 			isa = PBXGroup;
 			children = (
-				CEA7554729BC5D2500E3CFE3 /* DetailModule */,
 				CEA7551029B9CCC600E3CFE3 /* Applications */,
 				CEA7551C29B9CDAC00E3CFE3 /* Assembly */,
 				CEA7551429B9CD3800E3CFE3 /* Router */,
-				CEA7553129BA0D3000E3CFE3 /* FavoriteModule */,
 				CEA7551D29B9CDD700E3CFE3 /* MainModule */,
+				CEA7554729BC5D2500E3CFE3 /* DetailModule */,
+				CEA7553129BA0D3000E3CFE3 /* FavoriteModule */,
 				CEA7553B29BA101700E3CFE3 /* ServiceLayer */,
 				CEA7551529B9CD3E00E3CFE3 /* LoginModule */,
 				CEA7551129B9CD0B00E3CFE3 /* Resources */,
@@ -156,6 +156,7 @@
 		CEA7551D29B9CDD700E3CFE3 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				CEA7554C29BCB78E00E3CFE3 /* UiViewController + Extension.swift */,
 				CEA7552929B9CEA900E3CFE3 /* Model */,
 				CEA7552529B9CE8F00E3CFE3 /* View */,
 				CEA7552629B9CE9700E3CFE3 /* Presenter */,
@@ -234,7 +235,6 @@
 			children = (
 				CEA7554829BC5D4200E3CFE3 /* DetailViewController.swift */,
 				CEA7554A29BC5D5000E3CFE3 /* DetailPresenter.swift */,
-				CEA7554C29BCB78E00E3CFE3 /* UiViewController + Extension.swift */,
 			);
 			path = DetailModule;
 			sourceTree = "<group>";

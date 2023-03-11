@@ -36,14 +36,14 @@ class Router: RouterProtocol {
         
         let listOfRecipesViewController = createNavController(
             viewController: mainViewController,
-            itemName: "Search recipes",
+            itemName: "Recipes",
             itemImage: "list.bullet"
         )
 
         let favoriteRecipesViewController = createNavController(
             viewController: favViewController,
             itemName: "Top deserts",
-            itemImage: "brain"
+            itemImage: "heart.fill"
         )
 
         tabBar.viewControllers = [listOfRecipesViewController, favoriteRecipesViewController]
