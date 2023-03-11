@@ -11,8 +11,6 @@ protocol LoginViewProtocol: AnyObject {
 
 protocol LoginViewPresenterProtocol: AnyObject {
     init(view: LoginViewProtocol, router: RouterProtocol)
-    func pushToMainViewController()
-
 }
 
 class LoginPresenter: LoginViewPresenterProtocol {
@@ -24,9 +22,4 @@ class LoginPresenter: LoginViewPresenterProtocol {
         self.view = view
         self.router = router
     }
-
-    func pushToMainViewController() {
-        // router.pushToMainViewcontroller()
-    }
 }
-

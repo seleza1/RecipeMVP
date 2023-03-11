@@ -16,7 +16,6 @@ class FavoriteViewController: UIViewController {
         view.backgroundColor = .white
 
     }
-
 }
 
 extension FavoriteViewController: FavoriteViewProtocol {

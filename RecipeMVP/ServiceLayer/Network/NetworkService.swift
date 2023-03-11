@@ -27,7 +27,7 @@ final class NetworkService: NetworkServiceProtocol {
                 return
             }
 
-             String(data: data, encoding: .utf8).map { print($0) }
+             // String(data: data, encoding: .utf8).map { print($0) }
 
             do {
                 let json = try JSONDecoder().decode(Recipes.self, from: data)
