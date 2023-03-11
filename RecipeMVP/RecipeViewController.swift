@@ -71,8 +71,6 @@ class RecipeViewController: UIViewController {
         return button
     }()
 
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         addViews()

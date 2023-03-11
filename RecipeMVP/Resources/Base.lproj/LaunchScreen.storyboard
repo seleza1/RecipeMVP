@@ -17,37 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nK8-UW-f2o">
-                                <rect key="frame" x="0.0" y="356.66666666666669" width="393" height="139"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Easy-cook" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJb-AR-zDE">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="76.333333333333329"/>
-                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="70"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your perfect recipe, and start cooking!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kQ-4n-VFh">
-                                        <rect key="frame" x="0.0" y="86.333333333333314" width="393" height="52.666666666666657"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chef" translatesAutoresizingMaskIntoConstraints="NO" id="Bkm-AZ-Q3B">
-                                <rect key="frame" x="111.33333333333333" y="176" width="170.66666666666669" height="170.66666666666663"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plateFood" translatesAutoresizingMaskIntoConstraints="NO" id="gGy-rc-9R3">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NLs-KB-HAB"/>
-                        <color key="backgroundColor" name="red"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" name="dark"/>
                         <constraints>
-                            <constraint firstItem="nK8-UW-f2o" firstAttribute="top" secondItem="Bkm-AZ-Q3B" secondAttribute="bottom" constant="10" id="4rs-Fj-QAv"/>
-                            <constraint firstItem="nK8-UW-f2o" firstAttribute="leading" secondItem="DIF-fW-Liz" secondAttribute="leading" id="Am9-yY-xQP"/>
-                            <constraint firstItem="nK8-UW-f2o" firstAttribute="centerY" secondItem="DIF-fW-Liz" secondAttribute="centerY" id="MdB-uI-bjk"/>
-                            <constraint firstItem="Bkm-AZ-Q3B" firstAttribute="centerX" secondItem="DIF-fW-Liz" secondAttribute="centerX" id="eOL-n5-MUy"/>
-                            <constraint firstAttribute="trailing" secondItem="nK8-UW-f2o" secondAttribute="trailing" id="siM-dp-Pz7"/>
-                            <constraint firstItem="nK8-UW-f2o" firstAttribute="centerX" secondItem="DIF-fW-Liz" secondAttribute="centerX" id="x9p-Kk-bIL"/>
+                            <constraint firstItem="gGy-rc-9R3" firstAttribute="top" secondItem="DIF-fW-Liz" secondAttribute="top" id="3bG-JJ-Be4"/>
+                            <constraint firstAttribute="bottom" secondItem="gGy-rc-9R3" secondAttribute="bottom" id="ArE-g2-F9n"/>
+                            <constraint firstItem="gGy-rc-9R3" firstAttribute="trailing" secondItem="NLs-KB-HAB" secondAttribute="trailing" id="H0Z-uq-5Db"/>
+                            <constraint firstItem="gGy-rc-9R3" firstAttribute="leading" secondItem="NLs-KB-HAB" secondAttribute="leading" id="nqb-zV-RnV"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -57,12 +38,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chef" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="plateFood" width="600" height="600"/>
         <namedColor name="dark">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="red">
-            <color red="0.88627450980392153" green="0.24313725490196078" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

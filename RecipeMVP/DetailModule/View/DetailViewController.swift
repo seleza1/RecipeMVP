@@ -13,12 +13,14 @@ class DetailViewController: UIViewController {
 
     private let infoLabel: UILabel = {
         let label = UILabel()
-        label.font = label.font.withSize(20)
+        label.font = label.font.withSize(12)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
     }()
+
+
 
     let imageView: UIImageView = {
         let imageView = UIImageView()
