@@ -24,7 +24,6 @@ class MainPresenter: MainViewPresenterProtocol {
         router?.pushDetailsVC(recipe: recipe)
     }
 
-
     unowned var view: MainViewProtocol?
     let networkService: NetworkServiceProtocol!
     var router: RouterProtocol?

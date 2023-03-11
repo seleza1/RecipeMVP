@@ -10,21 +10,11 @@ import UIKit
 protocol AssemblyBuilderProtocol {
     func createMainModule(router: RouterProtocol) -> UIViewController
     func createFavoriteModule(router: RouterProtocol) -> UIViewController
-    func createDetailsModule(recipe: Recipe?, router: RouterProtocol) -> UIViewController
+    func createDetailsModule(recipe: Recipe, router: RouterProtocol) -> UIViewController
 
 }
 
 final class AssemblyBuilder: AssemblyBuilderProtocol {
-    func createDetailsModule(recipe: Recipe?, router: RouterProtocol) -> UIViewController {
-        let view = DetailViewController()
-        let networkService = NetworkService()
-        let presenter = DetailPresenter(view: view, recipe: recipe!, networkService: networkService, router: router)
-        view.presenter = presenter
-
-        return view
-    }
-
-
 
     func createMainModule(router: RouterProtocol) -> UIViewController {
         let view = RecipeViewController()
@@ -41,4 +31,14 @@ final class AssemblyBuilder: AssemblyBuilderProtocol {
         view.presenter = presenter
         return view
     }
+
+    func createDetailsModule(recipe: Recipe, router: RouterProtocol) -> UIViewController {
+        let view = DetailViewController()
+        let networkService = NetworkService()
+        let presenter = DetailPresenter(view: view, recipe: recipe, networkService: networkService, router: router)
+        view.presenter = presenter
+
+        return view
+    }
+
 }

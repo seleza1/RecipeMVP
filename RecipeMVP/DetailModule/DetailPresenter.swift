@@ -6,28 +6,29 @@
 //
 
 protocol DetailViewProtocol: AnyObject {
-
+    func setRecipe(recipe: Recipe?)
 }
 
 protocol DetailViewPresenterProtocol: AnyObject {
-    init(view: DetailViewProtocol, recipe: Recipe, networkService: NetworkServiceProtocol, router: RouterProtocol)
-    var recipes: Recipe? { get set }
-
-
+    init(view: DetailViewProtocol, recipe: Recipe?, networkService: NetworkServiceProtocol, router: RouterProtocol)
+    func setRecipe()
 }
 
 class DetailPresenter: DetailViewPresenterProtocol {
-    var recipes: Recipe?
-    
+    var recipe: Recipe?
 
     unowned var view: DetailViewProtocol?
-    var router: RouterProtocol!
-    var networkService: NetworkServiceProtocol!
+    let router: RouterProtocol!
+    let networkService: NetworkServiceProtocol!
 
-    required init(view: DetailViewProtocol, recipe: Recipe, networkService: NetworkServiceProtocol, router: RouterProtocol) {
+    required init(view: DetailViewProtocol, recipe: Recipe?, networkService: NetworkServiceProtocol, router: RouterProtocol) {
         self.view = view
         self.router = router
         self.networkService = networkService
+    }
+
+    func setRecipe() {
+        view?.setRecipe(recipe: recipe)
     }
 
 
