@@ -26,6 +26,7 @@ class DetailViewController: UIViewController {
         view.addSubview(infoLabel)
         setConstraints()
         presenter.setRecipe()
+
     }
 }
 
@@ -43,6 +44,6 @@ extension DetailViewController {
 extension DetailViewController: DetailViewProtocol {
 
     func setRecipe(recipe: Recipe?) {
-        print(recipe?.title)
+        infoLabel.text = recipe?.instructions
     }
 }
