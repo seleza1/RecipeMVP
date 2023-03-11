@@ -22,6 +22,8 @@
 		CEA7553629BA0D5A00E3CFE3 /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7553529BA0D5A00E3CFE3 /* FavoritePresenter.swift */; };
 		CEA7553D29BA102700E3CFE3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7553C29BA102700E3CFE3 /* NetworkService.swift */; };
 		CEA7554029BA19FB00E3CFE3 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7553F29BA19FB00E3CFE3 /* Link.swift */; };
+		CEA7554929BC5D4200E3CFE3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7554829BC5D4200E3CFE3 /* DetailViewController.swift */; };
+		CEA7554B29BC5D5000E3CFE3 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7554A29BC5D5000E3CFE3 /* DetailPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		CEA7553529BA0D5A00E3CFE3 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 		CEA7553C29BA102700E3CFE3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CEA7553F29BA19FB00E3CFE3 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		CEA7554829BC5D4200E3CFE3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CEA7554A29BC5D5000E3CFE3 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		CE86716A29B9BE9F00F7FDAB /* RecipeMVP */ = {
 			isa = PBXGroup;
 			children = (
+				CEA7554729BC5D2500E3CFE3 /* DetailModule */,
 				CEA7551029B9CCC600E3CFE3 /* Applications */,
 				CEA7551C29B9CDAC00E3CFE3 /* Assembly */,
 				CEA7551429B9CD3800E3CFE3 /* Router */,
@@ -222,6 +227,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		CEA7554729BC5D2500E3CFE3 /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7554829BC5D4200E3CFE3 /* DetailViewController.swift */,
+				CEA7554A29BC5D5000E3CFE3 /* DetailPresenter.swift */,
+			);
+			path = DetailModule;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -300,11 +314,13 @@
 				CEA7554029BA19FB00E3CFE3 /* Link.swift in Sources */,
 				CEA7553329BA0D4700E3CFE3 /* FavoriteViewController.swift in Sources */,
 				CEA7551F29B9CE2600E3CFE3 /* MainPresenter.swift in Sources */,
+				CEA7554B29BC5D5000E3CFE3 /* DetailPresenter.swift in Sources */,
 				CEA7551729B9CD7800E3CFE3 /* LoginPresenter.swift in Sources */,
 				CEA7552829B9CEA500E3CFE3 /* Model.swift in Sources */,
 				CEA7552E29B9DDDF00E3CFE3 /* AssemblyBuilder.swift in Sources */,
 				CEA7553D29BA102700E3CFE3 /* NetworkService.swift in Sources */,
 				CEA7552129B9CE3200E3CFE3 /* RecipeViewController.swift in Sources */,
+				CEA7554929BC5D4200E3CFE3 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

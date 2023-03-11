@@ -80,6 +80,7 @@ class RecipeViewController: UIViewController {
         setConstraints()
         updateUi()
         retryButton.addTarget(self, action: #selector(getAgain), for: .touchUpInside)
+        
         if presenter.recipes.count < 1 {
             activityIndicator.startAnimating()
             uiView.isHidden = false
@@ -106,6 +107,10 @@ extension RecipeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = presenter.recipes[indexPath.row].title
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }
 
@@ -170,7 +175,7 @@ extension RecipeViewController: MainViewProtocol {
     func succes() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
-            self.activityIndicator.startAnimating()
+            self.activityIndicator.stopAnimating()
             self.uiView.isHidden = true
         }
     }
