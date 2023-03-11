@@ -1,5 +1,5 @@
 //
-//  recipeModel.swift
+//  Model.swift
 //  RecipeMVP
 //
 //  Created by user on 09.03.2023.

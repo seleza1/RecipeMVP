@@ -16,7 +16,7 @@
 		CEA7551729B9CD7800E3CFE3 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7551629B9CD7800E3CFE3 /* LoginPresenter.swift */; };
 		CEA7551F29B9CE2600E3CFE3 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7551E29B9CE2600E3CFE3 /* MainPresenter.swift */; };
 		CEA7552129B9CE3200E3CFE3 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7552029B9CE3200E3CFE3 /* RecipeViewController.swift */; };
-		CEA7552829B9CEA500E3CFE3 /* recipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7552729B9CEA500E3CFE3 /* recipeModel.swift */; };
+		CEA7552829B9CEA500E3CFE3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7552729B9CEA500E3CFE3 /* Model.swift */; };
 		CEA7552E29B9DDDF00E3CFE3 /* AssemblyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7552D29B9DDDF00E3CFE3 /* AssemblyBuilder.swift */; };
 		CEA7553329BA0D4700E3CFE3 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7553229BA0D4700E3CFE3 /* FavoriteViewController.swift */; };
 		CEA7553629BA0D5A00E3CFE3 /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7553529BA0D5A00E3CFE3 /* FavoritePresenter.swift */; };
@@ -36,7 +36,7 @@
 		CEA7551629B9CD7800E3CFE3 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		CEA7551E29B9CE2600E3CFE3 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		CEA7552029B9CE3200E3CFE3 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
-		CEA7552729B9CEA500E3CFE3 /* recipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipeModel.swift; sourceTree = "<group>"; };
+		CEA7552729B9CEA500E3CFE3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CEA7552D29B9DDDF00E3CFE3 /* AssemblyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyBuilder.swift; sourceTree = "<group>"; };
 		CEA7553229BA0D4700E3CFE3 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		CEA7553529BA0D5A00E3CFE3 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 		CEA7552929B9CEA900E3CFE3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CEA7552729B9CEA500E3CFE3 /* recipeModel.swift */,
+				CEA7552729B9CEA500E3CFE3 /* Model.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -301,7 +301,7 @@
 				CEA7553329BA0D4700E3CFE3 /* FavoriteViewController.swift in Sources */,
 				CEA7551F29B9CE2600E3CFE3 /* MainPresenter.swift in Sources */,
 				CEA7551729B9CD7800E3CFE3 /* LoginPresenter.swift in Sources */,
-				CEA7552829B9CEA500E3CFE3 /* recipeModel.swift in Sources */,
+				CEA7552829B9CEA500E3CFE3 /* Model.swift in Sources */,
 				CEA7552E29B9DDDF00E3CFE3 /* AssemblyBuilder.swift in Sources */,
 				CEA7553D29BA102700E3CFE3 /* NetworkService.swift in Sources */,
 				CEA7552129B9CE3200E3CFE3 /* RecipeViewController.swift in Sources */,

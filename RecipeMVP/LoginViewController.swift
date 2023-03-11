@@ -93,7 +93,6 @@ final class LoginViewController: UIViewController {
     }
 
     @objc func loginButtonPressed() {
-        presenter.pushToMainViewController()
     }
 }
 
