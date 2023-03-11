@@ -6,7 +6,7 @@
 //
 
 protocol MainViewProtocol: AnyObject {
-    func succes()
+    func success()
     func failure(error: Error)
 }
 
@@ -41,7 +41,7 @@ class MainPresenter: MainViewPresenterProtocol {
             switch result {
             case .success(let news):
                 self?.recipes = news
-                self?.view?.succes()
+                self?.view?.success()
             case .failure(let error):
                 self?.view?.failure(error: error)
             }

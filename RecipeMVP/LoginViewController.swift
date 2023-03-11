@@ -65,7 +65,7 @@ final class LoginViewController: UIViewController {
         return label
     }()
 
-    private let succesLabel: UILabel = {
+    private let successLabel: UILabel = {
         let label = UILabel()
         label.text = "You signed up!"
         label.textColor = .black
@@ -121,9 +121,9 @@ extension LoginViewController {
             failureLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             failureLabel.bottomAnchor.constraint(equalTo: passwordTextField.topAnchor, constant: 1),
 
-            succesLabel.bottomAnchor.constraint(equalTo: loginTextField.topAnchor, constant: -8),
-            succesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            succesLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+            successLabel.bottomAnchor.constraint(equalTo: loginTextField.topAnchor, constant: -8),
+            successLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            successLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
         ])
     }
 
@@ -133,7 +133,7 @@ extension LoginViewController {
         view.addSubview(loginTextField)
         view.addSubview(passwordTextField)
         view.addSubview(failureLabel)
-        view.addSubview(succesLabel)
+        view.addSubview(successLabel)
     }
 
     private func setupKeyboard() {
@@ -149,7 +149,7 @@ extension LoginViewController {
     private func updateUi() {
         view.backgroundColor = .white
         failureLabel.isHidden = true
-        succesLabel.isHidden = true
+        successLabel.isHidden = true
     }
 }
 

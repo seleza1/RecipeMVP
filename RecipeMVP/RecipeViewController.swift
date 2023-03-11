@@ -176,7 +176,7 @@ extension RecipeViewController {
 }
 
 extension RecipeViewController: MainViewProtocol {
-    func succes() {
+    func success() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.activityIndicator.stopAnimating()
