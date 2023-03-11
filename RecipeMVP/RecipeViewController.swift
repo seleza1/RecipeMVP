@@ -103,8 +103,11 @@ extension RecipeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-        cell.textLabel?.text = presenter.recipes[indexPath.row].title
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.idMainTableViewCell, for: indexPath) as? MainTableViewCell else {
+            return MainTableViewCell()
+        }
+        let recipe = presenter.recipes[indexPath.row]
+        cell.configure(name: recipe, image: recipe)
 
         return cell
     }
@@ -147,7 +150,7 @@ extension RecipeViewController {
     }
 
     private func updateTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: identifier)
+        tableView.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.idMainTableViewCell)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 115

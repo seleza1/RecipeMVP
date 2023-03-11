@@ -66,7 +66,7 @@ class Router: RouterProtocol {
     func pushDetailsVC(recipe: Recipe) {
         if let navigationController = navigationController {
             guard let detailViewController = assemblyBuilder?.createDetailsModule(recipe: recipe, router: self) else { return }
-            navigationController.pushViewController(detailViewController, animated: true)
+            navigationController.present(detailViewController, animated: true)
         }
     }
 }

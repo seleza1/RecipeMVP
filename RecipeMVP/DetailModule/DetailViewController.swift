@@ -20,10 +20,29 @@ class DetailViewController: UIViewController {
         return label
     }()
 
+    let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "plateFood")
+        imageView.backgroundColor = .gray
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+
+    }()
+
+    let cookingTimeLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = label.font.withSize(15)
+        label.textAlignment = .center
+
+        return label
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(infoLabel)
+        view.addSubview(imageView)
         setConstraints()
         presenter.setRecipe()
 
@@ -33,7 +52,13 @@ class DetailViewController: UIViewController {
 extension DetailViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            infoLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+
+            imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 32),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            imageView.heightAnchor.constraint(equalToConstant: 250),
+
+            infoLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 300),
             infoLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             infoLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
 
