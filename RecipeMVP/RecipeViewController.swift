@@ -110,7 +110,8 @@ extension RecipeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let recipe = presenter.recipes[indexPath.row]
+        presenter.tapOnTheRecipe(recipe: recipe)
     }
 }
 

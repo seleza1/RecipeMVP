@@ -15,9 +15,17 @@ protocol RouterMain {
 
 protocol RouterProtocol: RouterMain {
     func setupTabBar()
+    func pushDetailsVC(recipe: Recipe)
 }
 
 class Router: RouterProtocol {
+    func pushDetailsVC(recipe: Recipe) {
+        if let navigationController = navigationController {
+            guard let detailViewController = assemblyBuilder?.createDetailsModule(recipe: recipe, router: self) else { return }
+            navigationController.pushViewController(detailViewController, animated: true)
+        }
+    }
+
 
     var assemblyBuilder: AssemblyBuilderProtocol?
     var navigationController: UINavigationController?

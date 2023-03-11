@@ -15,10 +15,15 @@ protocol MainViewPresenterProtocol: AnyObject {
 
     var recipes: [Recipe] { get set }
     func getRecipes()
+    func tapOnTheRecipe(recipe: Recipe)
 
 }
 
 class MainPresenter: MainViewPresenterProtocol {
+    func tapOnTheRecipe(recipe: Recipe) {
+        router?.pushDetailsVC(recipe: recipe)
+    }
+
 
     unowned var view: MainViewProtocol?
     let networkService: NetworkServiceProtocol!
