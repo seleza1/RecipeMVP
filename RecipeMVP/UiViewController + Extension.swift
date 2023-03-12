@@ -90,8 +90,8 @@ extension MainTableViewCell {
 
             valueLabel.topAnchor.constraint(equalTo: topAnchor, constant: 1),
             valueLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -1),
-            valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -1),
-            valueLabel.leadingAnchor.constraint(equalTo: imageViews.trailingAnchor, constant: 16)
+            valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            valueLabel.leadingAnchor.constraint(equalTo: imageViews.trailingAnchor, constant: 36)
 
         ])
     }
