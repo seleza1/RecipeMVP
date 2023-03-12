@@ -59,7 +59,6 @@ class Router: RouterProtocol {
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem = item
 
-
         return navigationController
     }
 

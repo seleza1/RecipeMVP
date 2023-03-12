@@ -38,13 +38,6 @@ class DetailViewController: UIViewController {
 
     }()
 
-    private var imageURL: URL? {
-        didSet {
-            imageView.image = nil
-            updateImage()
-        }
-    }
-
     private let cookingTimeLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -55,42 +48,20 @@ class DetailViewController: UIViewController {
         return label
     }()
 
+    private var imageURL: URL? {
+        didSet {
+            imageView.image = nil
+            updateImage()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        view.addSubview(ingredientsLabel)
-        view.addSubview(imageView)
-        view.addSubview(cookingTimeLabel)
-        view.addSubview(nameRecipesLabel)
+        setupView()
         setConstraints()
     }
 
-    private func updateImage() {
-            guard let imageURL = imageURL else { return }
-            getImage(from: imageURL) { [weak self] result in
-                switch result {
-                case .success(let image):
-                    if imageURL == self?.imageURL {
-                        self?.imageView.image = image
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-            }
-        }
 
-
-        private func getImage(from url: URL, completion: @escaping(Result<UIImage, Error>) -> Void) {
-            NetworkService().fetchImage(from: url) { result in
-                switch result {
-                case .success(let imageData):
-                    guard let uiImage = UIImage(data: imageData) else { return }
-                    completion(.success(uiImage))
-                case .failure(let error):
-                    print(error)
-                }
-            }
-        }
 }
 
 extension DetailViewController {
@@ -117,6 +88,42 @@ extension DetailViewController {
 
         ])
     }
+
+    private func setupView() {
+        view.addSubview(ingredientsLabel)
+        view.addSubview(imageView)
+        view.addSubview(cookingTimeLabel)
+        view.addSubview(nameRecipesLabel)
+        view.backgroundColor = .white
+
+    }
+
+    private func updateImage() {
+        guard let imageURL = imageURL else { return }
+        getImage(from: imageURL) { [weak self] result in
+            switch result {
+            case .success(let image):
+                if imageURL == self?.imageURL {
+                    self?.imageView.image = image
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
+    private func getImage(from url: URL, completion: @escaping(Result<UIImage, Error>) -> Void) {
+        NetworkService().fetchImage(from: url) { result in
+            switch result {
+            case .success(let imageData):
+                guard let uiImage = UIImage(data: imageData) else { return }
+                completion(.success(uiImage))
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
 }
 
 extension DetailViewController: DetailViewProtocol {
