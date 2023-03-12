@@ -39,7 +39,10 @@ final class MainTableViewCell: UITableViewCell {
         addSubview(valueLabel)
         addSubview(imageViews)
         setConstraints()
+        selectionStyle = .none
     }
+
+    
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

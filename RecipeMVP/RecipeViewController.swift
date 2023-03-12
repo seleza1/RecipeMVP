@@ -114,6 +114,11 @@ extension RecipeViewController: UITableViewDelegate, UITableViewDataSource {
         let recipe = presenter.recipes[indexPath.row]
         presenter.tapOnTheRecipe(recipe: recipe)
     }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        120
+    }
+
 }
 
 extension RecipeViewController {
