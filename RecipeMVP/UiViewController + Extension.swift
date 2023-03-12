@@ -23,6 +23,7 @@ final class MainTableViewCell: UITableViewCell {
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
+    
 
     private var imageURL: URL? {
         didSet {
@@ -86,12 +87,11 @@ extension MainTableViewCell {
             imageViews.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             imageViews.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -1),
             imageViews.widthAnchor.constraint(equalToConstant: 150),
-            imageViews.trailingAnchor.constraint(equalTo: valueLabel.leadingAnchor, constant: -1),
 
             valueLabel.topAnchor.constraint(equalTo: topAnchor, constant: 1),
             valueLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -1),
-            valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6),
-            valueLabel.leadingAnchor.constraint(equalTo: imageViews.trailingAnchor, constant: 6)
+            valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -1),
+            valueLabel.leadingAnchor.constraint(equalTo: imageViews.trailingAnchor, constant: 16)
 
         ])
     }

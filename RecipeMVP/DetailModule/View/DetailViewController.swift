@@ -13,16 +13,14 @@ class DetailViewController: UIViewController {
 
     private let infoLabel: UILabel = {
         let label = UILabel()
-        label.font = label.font.withSize(12)
+        label.font = label.font.withSize(15)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
     }()
 
-
-
-    let imageView: UIImageView = {
+    private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "plateFood")
         imageView.backgroundColor = .gray
@@ -31,11 +29,12 @@ class DetailViewController: UIViewController {
 
     }()
 
-    let cookingTimeLabel: UILabel = {
+    private let cookingTimeLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = label.font.withSize(15)
-        label.textAlignment = .center
+        label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
     }()
@@ -45,8 +44,9 @@ class DetailViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(infoLabel)
         view.addSubview(imageView)
+        view.addSubview(cookingTimeLabel)
         setConstraints()
-        presenter.setRecipe()
+        // presenter.setRecipe()
 
     }
 }
@@ -62,15 +62,21 @@ extension DetailViewController {
 
             infoLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 300),
             infoLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            infoLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            infoLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+
+            cookingTimeLabel.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 240),
+            cookingTimeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            cookingTimeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
 
         ])
     }
 }
 
 extension DetailViewController: DetailViewProtocol {
+    
 
-    func setRecipe(recipe: Recipe?) {
-        infoLabel.text = recipe?.instructions
+    func setRecipe(recipe: Recipe) {
+        infoLabel.text = recipe.instructions
+        cookingTimeLabel.text = "Сooking time - \(recipe.readyInMinutes)"
     }
 }
