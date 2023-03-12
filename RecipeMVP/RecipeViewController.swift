@@ -11,8 +11,6 @@ class RecipeViewController: UIViewController {
 
     var presenter: MainViewPresenterProtocol!
 
-    private let identifier = "cell"
-
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -77,15 +75,8 @@ class RecipeViewController: UIViewController {
         updateTableView()
         setConstraints()
         updateUi()
+        showAnimating()
         retryButton.addTarget(self, action: #selector(getAgain), for: .touchUpInside)
-        
-        if presenter.recipes.count < 1 {
-            activityIndicator.startAnimating()
-            uiView.isHidden = false
-        } else if presenter.recipes.count > 0 {
-            activityIndicator.stopAnimating()
-            uiView.isHidden = true
-        }
     }
 
     @objc func getAgain() {
@@ -166,6 +157,16 @@ extension RecipeViewController {
         activityIndicator.stopAnimating()
         uiView.isHidden = true
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+
+    private func showAnimating() {
+        if presenter.recipes.count < 1 {
+            activityIndicator.startAnimating()
+            uiView.isHidden = false
+        } else if presenter.recipes.count > 0 {
+            activityIndicator.stopAnimating()
+            uiView.isHidden = true
+        }
     }
 
     private func addViews() {

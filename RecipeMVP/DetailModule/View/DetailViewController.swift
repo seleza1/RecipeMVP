@@ -60,14 +60,11 @@ class DetailViewController: UIViewController {
         setupView()
         setConstraints()
     }
-
-
 }
 
 extension DetailViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
-
             imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 32),
             imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
@@ -95,7 +92,6 @@ extension DetailViewController {
         view.addSubview(cookingTimeLabel)
         view.addSubview(nameRecipesLabel)
         view.backgroundColor = .white
-
     }
 
     private func updateImage() {
@@ -123,11 +119,9 @@ extension DetailViewController {
             }
         }
     }
-
 }
 
 extension DetailViewController: DetailViewProtocol {
-
     func setRecipe(recipe: Recipe) {
         ingredientsLabel.text = recipe.instructions
         imageURL = URL(string: recipe.image)
