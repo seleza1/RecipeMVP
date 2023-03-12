@@ -11,9 +11,18 @@ class DetailViewController: UIViewController {
 
     var presenter: DetailViewPresenterProtocol!
 
-    private let infoLabel: UILabel = {
+    private let ingredientsLabel: UILabel = {
         let label = UILabel()
         label.font = label.font.withSize(15)
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        return label
+    }()
+
+    private let nameRecipesLabel: UILabel = {
+        let label = UILabel()
+        label.font = label.font.withSize(20)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
 
@@ -49,9 +58,10 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.addSubview(infoLabel)
+        view.addSubview(ingredientsLabel)
         view.addSubview(imageView)
         view.addSubview(cookingTimeLabel)
+        view.addSubview(nameRecipesLabel)
         setConstraints()
     }
 
@@ -92,13 +102,18 @@ extension DetailViewController {
             imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             imageView.heightAnchor.constraint(equalToConstant: 250),
 
-            infoLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 300),
-            infoLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            infoLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            nameRecipesLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
+            nameRecipesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            nameRecipesLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            nameRecipesLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 70),
 
-            cookingTimeLabel.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 240),
+            ingredientsLabel.topAnchor.constraint(equalTo: cookingTimeLabel.bottomAnchor, constant: 6),
+            ingredientsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            ingredientsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+
+            cookingTimeLabel.topAnchor.constraint(equalTo: nameRecipesLabel.bottomAnchor, constant: 32),
             cookingTimeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            cookingTimeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            cookingTimeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
 
         ])
     }
@@ -107,8 +122,9 @@ extension DetailViewController {
 extension DetailViewController: DetailViewProtocol {
 
     func setRecipe(recipe: Recipe) {
-        infoLabel.text = recipe.instructions
+        ingredientsLabel.text = recipe.instructions
         imageURL = URL(string: recipe.image)
+        nameRecipesLabel.text = recipe.title
         cookingTimeLabel.text = "Сooking time - \(recipe.readyInMinutes)"
     }
 }
