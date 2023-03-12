@@ -29,6 +29,13 @@ class DetailViewController: UIViewController {
 
     }()
 
+    private var imageURL: URL? {
+        didSet {
+            imageView.image = nil
+            updateImage()
+        }
+    }
+
     private let cookingTimeLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -46,9 +53,34 @@ class DetailViewController: UIViewController {
         view.addSubview(imageView)
         view.addSubview(cookingTimeLabel)
         setConstraints()
-        // presenter.setRecipe()
-
     }
+
+    private func updateImage() {
+            guard let imageURL = imageURL else { return }
+            getImage(from: imageURL) { [weak self] result in
+                switch result {
+                case .success(let image):
+                    if imageURL == self?.imageURL {
+                        self?.imageView.image = image
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+
+
+        private func getImage(from url: URL, completion: @escaping(Result<UIImage, Error>) -> Void) {
+            NetworkService().fetchImage(from: url) { result in
+                switch result {
+                case .success(let imageData):
+                    guard let uiImage = UIImage(data: imageData) else { return }
+                    completion(.success(uiImage))
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
 }
 
 extension DetailViewController {
@@ -73,10 +105,10 @@ extension DetailViewController {
 }
 
 extension DetailViewController: DetailViewProtocol {
-    
 
     func setRecipe(recipe: Recipe) {
         infoLabel.text = recipe.instructions
+        imageURL = URL(string: recipe.image)
         cookingTimeLabel.text = "Сooking time - \(recipe.readyInMinutes)"
     }
 }
