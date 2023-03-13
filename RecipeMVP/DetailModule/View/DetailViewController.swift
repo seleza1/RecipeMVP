@@ -26,6 +26,7 @@ class DetailViewController: UIViewController {
         button.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         button.tintColor = .lightGray
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(favoriteButtonPressed), for: .touchUpInside)
 
         return button
     }()
@@ -69,6 +70,14 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setConstraints()
+    }
+
+    @objc func favoriteButtonPressed() {
+        if favoriteButton.tintColor == .lightGray {
+            favoriteButton.tintColor = .red
+        } else if favoriteButton.tintColor == .red {
+            favoriteButton.tintColor = .lightGray
+        }
     }
 }
 
