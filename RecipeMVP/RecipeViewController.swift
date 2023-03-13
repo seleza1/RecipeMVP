@@ -25,14 +25,12 @@ class RecipeViewController: UIViewController {
         activity.translatesAutoresizingMaskIntoConstraints = false
 
         return activity
-
     }()
 
     private let uiView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
-
 
         return view
     }()

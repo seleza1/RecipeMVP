@@ -20,6 +20,16 @@ class DetailViewController: UIViewController {
         return label
     }()
 
+
+    private let favoriteButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        button.tintColor = .lightGray
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        return button
+    }()
+
     private let nameRecipesLabel: UILabel = {
         let label = UILabel()
         label.font = label.font.withSize(20)
@@ -81,7 +91,10 @@ extension DetailViewController {
 
             cookingTimeLabel.topAnchor.constraint(equalTo: nameRecipesLabel.bottomAnchor, constant: 32),
             cookingTimeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            cookingTimeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+            cookingTimeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+
+            favoriteButton.topAnchor.constraint(equalTo: nameRecipesLabel.bottomAnchor, constant: 5),
+            favoriteButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 305)
 
         ])
     }
@@ -91,6 +104,7 @@ extension DetailViewController {
         view.addSubview(imageView)
         view.addSubview(cookingTimeLabel)
         view.addSubview(nameRecipesLabel)
+        view.addSubview(favoriteButton)
         view.backgroundColor = .white
     }
 

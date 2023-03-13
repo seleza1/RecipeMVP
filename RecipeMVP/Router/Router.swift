@@ -42,7 +42,7 @@ class Router: RouterProtocol {
 
         let favoriteRecipesViewController = createNavController(
             viewController: favViewController,
-            itemName: "Top deserts",
+            itemName: "Favorites recipes",
             itemImage: "heart.fill"
         )
 
