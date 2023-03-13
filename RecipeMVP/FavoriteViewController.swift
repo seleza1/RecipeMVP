@@ -11,6 +11,8 @@ class FavoriteViewController: UIViewController {
     
     var presenter: FavoritePresenter!
 
+    var favoritesRecipes: [String] = []
+
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -21,10 +23,7 @@ class FavoriteViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(tableView)
         setConstraints()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.delegate = self
-        tableView.dataSource = self
-        view.backgroundColor = .white
+        setTableView()
 
     }
 }
@@ -35,7 +34,7 @@ extension FavoriteViewController: FavoriteViewProtocol {
 
 extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        favoritesRecipes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,8 +55,13 @@ extension FavoriteViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
-
         ])
+    }
+
+    func setTableView() {
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        view.backgroundColor = .white
     }
 }

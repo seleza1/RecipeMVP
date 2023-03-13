@@ -6,8 +6,8 @@
 //
 
 protocol MainViewProtocol: AnyObject {
-    func success()
-    func failure(error: Error)
+    func getData()
+    func dataNotGet(error: Error)
 }
 
 protocol MainViewPresenterProtocol: AnyObject {
@@ -20,13 +20,11 @@ protocol MainViewPresenterProtocol: AnyObject {
 }
 
 class MainPresenter: MainViewPresenterProtocol {
-    func tapOnTheRecipe(recipe: Recipe) {
-        router?.pushDetailsVC(recipe: recipe)
-    }
 
     unowned var view: MainViewProtocol?
     let networkService: NetworkServiceProtocol!
     var router: RouterProtocol?
+
     var recipes: [Recipe] = []
 
     required init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol) {
@@ -41,11 +39,15 @@ class MainPresenter: MainViewPresenterProtocol {
             switch result {
             case .success(let news):
                 self?.recipes = news
-                self?.view?.success()
+                self?.view?.getData()
             case .failure(let error):
-                self?.view?.failure(error: error)
+                self?.view?.dataNotGet(error: error)
             }
         }
+    }
+
+    func tapOnTheRecipe(recipe: Recipe) {
+        router?.pushDetailsVC(recipe: recipe)
     }
 
 }

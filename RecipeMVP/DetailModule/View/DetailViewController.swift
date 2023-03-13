@@ -70,6 +70,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setConstraints()
+        UserDefaults.standard.object(forKey: "kek")
     }
 
     @objc func favoriteButtonPressed() {

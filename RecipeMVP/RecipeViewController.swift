@@ -111,7 +111,7 @@ extension RecipeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension RecipeViewController {
-    private func setConstraints() {
+    func setConstraints() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -141,7 +141,7 @@ extension RecipeViewController {
         ])
     }
 
-    private func updateTableView() {
+    func updateTableView() {
         tableView.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.idMainTableViewCell)
         tableView.delegate = self
         tableView.dataSource = self
@@ -149,7 +149,7 @@ extension RecipeViewController {
 
     }
 
-    private func updateUi() {
+    func updateUi() {
         view.backgroundColor = .white
         title = "List of recipes"
         activityIndicator.stopAnimating()
@@ -157,7 +157,7 @@ extension RecipeViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
-    private func showAnimating() {
+    func showAnimating() {
         if presenter.recipes.count < 1 {
             activityIndicator.startAnimating()
             uiView.isHidden = false
@@ -167,7 +167,7 @@ extension RecipeViewController {
         }
     }
 
-    private func addViews() {
+    func addViews() {
         view.addSubview(tableView)
         view.addSubview(activityIndicator)
         view.addSubview(uiView)
@@ -178,7 +178,7 @@ extension RecipeViewController {
 }
 
 extension RecipeViewController: MainViewProtocol {
-    func success() {
+    func getData() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.activityIndicator.stopAnimating()
@@ -186,7 +186,7 @@ extension RecipeViewController: MainViewProtocol {
         }
     }
 
-    func failure(error: Error) {
+    func dataNotGet(error: Error) {
         print(error)
     }
 }
